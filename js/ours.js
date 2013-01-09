@@ -7,7 +7,15 @@
  */
 $(document).ready(function(){
 
+    $.getJSON('document.json', function(data) {
+        var output="<p>";
+        for (var i in data.hymns) {
+            output+="<p>" + data.hymns[i].number + " " + data.hymns[i].verse +"</p>";
+        }
 
+        output+="</p>";
+        document.getElementById("content").innerHTML=output;
+    });
 
 
 
